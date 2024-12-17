@@ -143,7 +143,7 @@ void reconnect() {
       Serial.println("Terhubung!");  
       lcdMessage("MQTT Connected", false);
       // Subscribe
-      client.subscribe("G.231.22.0023/control");
+      client.subscribe("G.231.22.0048/control");
     } else {  
       Serial.print("Gagal, rc=");  
       Serial.println(client.state());
@@ -180,8 +180,8 @@ void displayTempAndHumid(bool forceUpdate = false) {
 
 // Publish Temperature dan Humidity
 void publishTempAndHumid(){
-  client.publish("G.231.22.0023/temperature", String(temperature).c_str(), true);
-  client.publish("G.231.22.0023/humidity", String(humidity).c_str(), true);
+  client.publish("G.231.22.0048/temperature", String(temperature).c_str(), true);
+  client.publish("G.231.22.0048/humidity", String(humidity).c_str(), true);
 }
 
 // Menampilkan Pesan Control LED
